@@ -7,7 +7,9 @@
   --contacts-color: rgba(255, 255, 255, 0.6);
   --white-color: #fff;
   --black-color: #000;
-  --background-color: #2f303a;
+  --icon-color: #AFB1B8;
+  --background-color-hero: #C4C4C4;
+  --background-color-footer: #2f303a;
   --secondary-background-color: #F5F4FA;
   --button-shadow-style: 0px 3px 1px rgba(0, 0, 0, 0.1),
     0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
@@ -61,6 +63,16 @@ address {
 
 /* Start Components */
 
+.header-link:hover,
+.header-link:focus,
+.footer-link:hover,
+.footer-link:focus,
+.contacts-list-icon:hover,
+.contacts-list-icon:focus,
+.active-link {
+  color: var(--accent-color);
+}
+
 .logo {
   color: var(--accent-color);
   font-family: var(--secondary-font-family);
@@ -113,6 +125,17 @@ address {
   flex-basis: calc(100% / var(--card-item) - 30px);
   margin-left: 30px;
   margin-top: 30px;
+}
+
+.thumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-list {
+  display: flex;
+  justify-content: space-between;
 }
 
 /* End Components */
@@ -170,6 +193,10 @@ address {
   margin-left: auto;
 }
 
+.contacts-list-icon {
+  margin-right: 10px;
+}
+
 .header .contacts-list-item:not(:last-child) {
   margin-right: 50px;
 }
@@ -179,10 +206,17 @@ address {
 /* Hero start */
 
 .hero {
+  margin-right: auto;
+  margin-left: auto;
   padding-top: 200px;
   padding-bottom: 200px;
+  width: 1600px;
 
-  background-color: var(--background-color);
+  background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../images/hero/hero-background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-color: var(--background-color-hero);
+
   text-align: center;
 }
 
@@ -217,6 +251,15 @@ address {
 .advantages {
   padding-bottom: 0;
   --card-item: 4;
+}
+
+.advantages .thumb {
+  margin-bottom: 30px;
+  width: 270px;
+  height: 120px;
+
+  background: var(--secondary-background-color);
+  border-radius: 4px;
 }
 
 .advantages-list-title {
@@ -255,7 +298,7 @@ address {
 .our-team-border {
   padding: 30px;
 
-  background: #FFFFFF;
+  background: var(--white-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
   0px 1px 1px rgba(0, 0, 0, 0.14),
   0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -276,7 +319,64 @@ address {
   color: var(--primary-color);
 }
 
+.our-team-list-position {
+  margin-bottom: 16px;
+}
+.social-list {
+  min-width: 206px;
+}
+
+.social-link {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+}
+
+.social-icon {
+  fill: var(--icon-color);
+}
+
+.social-link:hover,
+.social-link:focus {
+  background-color: var(--accent-color);
+}
+
+.social-link:hover .social-icon,
+.social-link:focus .social-icon {
+  fill: var(--white-color);
+}
+
 /* our team end */
+
+/* our clients start */
+
+.our-clients-list {
+  display: flex;
+  justify-content: space-between
+}
+
+.our-clients-link {
+  border: 1px solid var(--icon-color);
+  border-radius: 4px;
+  width: 170px;
+  height: 92px;
+}
+
+.our-clients-icon {
+  fill: var(--icon-color);
+}
+
+.our-clients-link:hover,
+.our-clients-link:focus {
+  border-color: var(--accent-color);
+}
+
+.our-clients-link:hover .our-clients-icon,
+.our-clients-link:focus .our-clients-icon {
+  fill: var(--accent-color);
+}
+
+/* our clients end */
 
 /* footer start */
 
@@ -284,7 +384,12 @@ address {
   padding-top: 60px;
   padding-bottom: 60px;
 
-  background-color: var(--background-color);
+  background-color: var(--background-color-footer);
+}
+
+.footer .container {
+  display: flex;
+  align-items: center;
 }
 
 .footer .logo {
@@ -315,13 +420,33 @@ address {
   color: var(--contacts-color);
 }
 
-.header-link:hover,
-.header-link:focus,
-.footer-link:hover,
-.footer-link:focus,
-.active-link {
-  color: var(--accent-color);
+.contacts-wrapper {
+  margin-right: 70px;
 }
+
+.footer-title {
+  margin-bottom: 20px;
+
+  font-weight: 700;
+  line-height: 1.14;
+  font-size: inherit;
+  text-transform: uppercase;
+  color: var(--white-color);
+}
+
+.footer .social-link {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.footer .social-icon {
+  fill: var(--white-color);
+}
+
+.footer .social-link:hover,
+.footer .social-link:focus {
+  background-color: var(--accent-color);
+}
+
 
 /* footer end */
 
@@ -366,7 +491,13 @@ address {
   padding: 20px 24px;
 
   background: #FFFFFF;
-  border: 1px solid #EEEEEE;
+  border: 1px solid #EEEEEE;  
+}
+
+.portfolio-works-item:hover {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
+  0px 4px 4px rgba(0, 0, 0, 0.06),
+  1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .portfolio-works-title {
