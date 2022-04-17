@@ -135,7 +135,11 @@ address {
 
 .social-list {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+}
+
+.social-list-item:not(:last-child) {
+  margin-right: 10px;
 }
 
 /* End Components */
@@ -180,6 +184,8 @@ address {
 
 .header-link {
   display: flex;
+  align-items: center;
+
   padding-top: 32px;
   padding-bottom: 32px;
 
@@ -223,11 +229,17 @@ address {
 .hero-title {
   margin-bottom: 30px;
 
+  max-width: 696px;
+  margin-right: auto;
+  margin-left: auto;
+
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+
+
   color: var(--white-color);
 }
 
@@ -255,7 +267,6 @@ address {
 
 .advantages .thumb {
   margin-bottom: 30px;
-  width: 270px;
   height: 120px;
 
   background: var(--secondary-background-color);
@@ -291,7 +302,6 @@ address {
 
 .our-team {
   background-color: var(--secondary-background-color);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   --card-item: 4;
 }
 
@@ -322,9 +332,6 @@ address {
 .our-team-list-position {
   margin-bottom: 16px;
 }
-.social-list {
-  min-width: 206px;
-}
 
 .social-link {
   width: 44px;
@@ -350,15 +357,13 @@ address {
 
 /* our clients start */
 
-.our-clients-list {
-  display: flex;
-  justify-content: space-between
+.our-clients {
+  --card-item: 6;
 }
 
 .our-clients-link {
   border: 1px solid var(--icon-color);
   border-radius: 4px;
-  width: 170px;
   height: 92px;
 }
 
@@ -389,7 +394,7 @@ address {
 
 .footer .container {
   display: flex;
-  align-items: center;
+  align-items: baseline;
 }
 
 .footer .logo {
@@ -494,10 +499,15 @@ address {
   border: 1px solid #EEEEEE;  
 }
 
-.portfolio-works-item:hover {
+.portfolio-works-link:hover,
+.portfolio-works-link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
   0px 4px 4px rgba(0, 0, 0, 0.06),
   1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+.portfolio-works-link {
+  display: block;
 }
 
 .portfolio-works-title {
@@ -507,6 +517,7 @@ address {
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.06em;
+
   color: var(--primary-color);
 }
 
